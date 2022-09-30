@@ -1,0 +1,47 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: #ffefd6;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #ed8771;
+
+  border-radius: 40%;
+
+  margin: 0 10px 0 0; 
+  padding: 10px;
+}
+
+.number {
+  font-weight: 600;
+  margin: 0 15px 0 0 ;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+  padding: 10px;
+
+  border: none;
+  border-radius: 50%;
+  background-color: #f3694d;
+  color: rgb(255, 194, 154);
+  transition: background-color 0.4s;
+  
+}
+
+.button:hover,
+.button:focus {
+    cursor: pointer;
+  background-color: rgb(56, 56, 56);
+}

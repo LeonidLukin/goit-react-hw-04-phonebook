@@ -1,0 +1,31 @@
+.label {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 30px;
+}
+
+.text {
+  font-weight: normal;
+  color: rgb(255, 239, 214);
+  margin: 0 auto 10px auto;
+}
+
+.input {
+  width: 300px;
+  height: 40px;
+  padding: 0 10px 0 10px;
+  font-size: 14px;
+
+  border-radius: 4px;
+  border: 1px solid rgba(0, 121, 154, 0);
+
+  outline: none;
+
+    transition: border 0.3s;
+
+}
+
+.input:focus {
+  border: 1px solid #00789a;
+}
