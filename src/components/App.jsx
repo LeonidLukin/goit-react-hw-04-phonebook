@@ -22,8 +22,8 @@ export default function App() {
   }, [])
 
   useEffect(() => {
-    localStorage.setItem('contacts', JSON.stringify(contacts))
-  }, [contacts])
+    localStorage.setItem('contacts', JSON.stringify(contacts));
+  }, [contacts]);
 
   const addContact = ({ name, number }) => {
     const newContact = { id: nanoid(), name, number };
@@ -47,12 +47,20 @@ export default function App() {
 
   const changeFilter = e => setFilter(e.currentTarget.value);
 
-  const filtredContacts = () => {
-    const normalizedFilter = filter.toLowerCase();
-    return contacts.filter(contact =>
-      contact.name.toLowerCase().includes(normalizedFilter),
-    );
+  const getFilteredContact = filtered => {
+    const normalaizedFilter = filter.toLowerCase();
+
+    const active = filtered ? filtered : contacts;
+
+    return active.filter(contact => {
+      return (
+        contact.name.toLowerCase().includes(normalaizedFilter) ||
+        contact.number.includes(filter)
+      );
+    });
   };
+
+  const filteredContact = getFilteredContact();
 
   const toggleModal = () => {
     setShowModal(prevShowModal => !prevShowModal);
@@ -77,7 +85,7 @@ export default function App() {
       <Filter filter={filter} changeFilter={changeFilter} />
       {contacts.length > 0 ? (
         <ContactList
-          contacts={filtredContacts}
+          contacts={filteredContact}
           onDeleteContact={deleteContact}
         />
       ) : (
